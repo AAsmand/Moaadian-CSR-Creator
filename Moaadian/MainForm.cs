@@ -1,6 +1,7 @@
 ﻿
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
+using System.IO;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -22,7 +23,7 @@ namespace Moaadian
             cmbType.DisplayMember = "Text";
             cmbType.Items.Add(new PersonType { Value = "Governmental", Text = "حقوقی وابسته به دولت" });
             cmbType.Items.Add(new PersonType { Value = "Non-Governmental", Text = "حقوقی وابسته به غیر دولت" });
-            cmbType.SelectedIndex= 0;
+            cmbType.SelectedIndex= 1;
             cmbType.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
@@ -33,7 +34,7 @@ namespace Moaadian
 
         private void btnSaveKeyAddress_Click(object sender, EventArgs e)
         {
-            saveFileDialog.FileName = "MyKey";
+            saveFileDialog.FileName = "MyPrivateKey";
             saveFileDialog.Filter = "Key files (*.key)|*.key";
             saveFileDialog.FilterIndex = 1;
             saveFileDialog.RestoreDirectory = true;
@@ -93,15 +94,15 @@ namespace Moaadian
 
             var csrBytes = certificateRequest.CreateSigningRequest();
             var privateKeyBytes = key.ExportPkcs8PrivateKey();
-            var publicKeyBytes=key.ExportRSAPublicKey();
+            var publicKeyBytes=key.ExportSubjectPublicKeyInfo();
 
-            var privateKey = Convert.ToBase64String(privateKeyBytes);
-            var publicKey = Convert.ToBase64String(publicKeyBytes);
             var csr = Convert.ToBase64String(csrBytes);
+            string publicKeyPem = new string(PemEncoding.Write("PUBLIC KEY", publicKeyBytes));
+            string privateKeyPem = new string(PemEncoding.Write("PRIVATE KEY", privateKeyBytes));
 
             File.WriteAllText(SaveCSRAddressTxt.Text, csr);
-            File.WriteAllText(SaveKeyAddressTxt.Text, privateKey);
-            File.WriteAllText(SaveKeyAddressTxt.Text.Replace(".key",".txt"), publicKey);
+            File.WriteAllText(SaveKeyAddressTxt.Text, privateKeyPem);
+            File.WriteAllText(Path.GetDirectoryName(SaveKeyAddressTxt.Text)+"\\MyPublicKey.txt", publicKeyPem);
             MessageBox.Show("گواهی و کلید شما صادر شد","عملیات موفق",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
         }
         private static string BuildDistinguishedName(List<(string, string)> distinguishedName)
@@ -134,10 +135,6 @@ namespace Moaadian
 
         private void txtNationalCode_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNationalCode.Text))
-                errorProvider.SetError(txtNationalCode, "وارد کردن فیلد شناسه 11 رقمی سازمان، الزامی است");
-            else
-                errorProvider.SetError(txtNationalCode, "");
             if (txtNationalCode.Text.Length!=11)
                 errorProvider.SetError(txtNationalCode, "طول شناسه ملی سازمان باید 11 رقم باشد");
             else
@@ -146,7 +143,7 @@ namespace Moaadian
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ProcessStartInfo sInfo = new ProcessStartInfo("https://www.sepidarsystem.com") { UseShellExecute = true };
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://landing.sepidarsystem.com/taxpayer-system/") { UseShellExecute = true };
             Process.Start(sInfo);
         }
 
