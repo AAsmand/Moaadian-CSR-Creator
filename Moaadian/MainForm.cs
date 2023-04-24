@@ -39,6 +39,11 @@ namespace Moaadian
                 MessageBox.Show("لطفا مقادیر اجباری را به درستی وارد نمائید", "عملیات ناموفق", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (txtNationalCode.Text.Length != 11)
+            {
+                MessageBox.Show("طول شناسه ملی سازمان باید 11 رقم باشد", "عملیات ناموفق", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var distinguishedName = new List<(string, string)>();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -76,7 +81,7 @@ namespace Moaadian
                 }
                 catch
                 {
-                    MessageBox.Show("گواهی و کلید شما صادر نشد", "عملیات ناموفق", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("گواهی و کلید شما صادر نشد، لطفا مجددا تلاش نمائید.", "عملیات ناموفق", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
         }
