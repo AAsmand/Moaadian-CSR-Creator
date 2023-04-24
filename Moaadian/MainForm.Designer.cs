@@ -33,16 +33,12 @@
             groupBox1 = new GroupBox();
             label12 = new Label();
             pictureBox1 = new PictureBox();
-            label11 = new Label();
             label9 = new Label();
             label2 = new Label();
             label1 = new Label();
             label8 = new Label();
             txtFullName = new TextBox();
             btnExit = new Button();
-            label17 = new Label();
-            btnSaveCSRAddress = new Button();
-            SaveCSRAddressTxt = new TextBox();
             BtnSave = new Button();
             label6 = new Label();
             cmbType = new ComboBox();
@@ -70,16 +66,12 @@
             groupBox1.BackgroundImageLayout = ImageLayout.None;
             groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(txtFullName);
             groupBox1.Controls.Add(btnExit);
-            groupBox1.Controls.Add(label17);
-            groupBox1.Controls.Add(btnSaveCSRAddress);
-            groupBox1.Controls.Add(SaveCSRAddressTxt);
             groupBox1.Controls.Add(BtnSave);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(cmbType);
@@ -92,10 +84,12 @@
             groupBox1.Controls.Add(txtOrganizationPart1);
             groupBox1.Controls.Add(txtOrganizationName);
             groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             groupBox1.Location = new Point(0, 0);
+            groupBox1.Margin = new Padding(2, 3, 2, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(556, 286);
+            groupBox1.Padding = new Padding(2, 3, 2, 3);
+            groupBox1.Size = new Size(559, 286);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "مشخصات سازمان/شرکت";
@@ -104,11 +98,12 @@
             // 
             label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label12.AutoSize = true;
-            label12.Font = new Font("Calibri", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Calibri", 10F, FontStyle.Regular, GraphicsUnit.Pixel);
             label12.ForeColor = SystemColors.ActiveBorder;
-            label12.Location = new Point(3, 273);
+            label12.Location = new Point(6, 270);
+            label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(19, 13);
+            label12.Size = new Size(18, 13);
             label12.TabIndex = 52;
             label12.Text = "V1";
             // 
@@ -119,32 +114,24 @@
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(27, 34);
+            pictureBox1.Location = new Point(26, 34);
+            pictureBox1.Margin = new Padding(2, 3, 2, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(155, 162);
+            pictureBox1.Size = new Size(156, 162);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 51;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             pictureBox1.MouseHover += pictureBox1_MouseHover;
             // 
-            // label11
-            // 
-            label11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label11.AutoSize = true;
-            label11.ForeColor = Color.Red;
-            label11.Location = new Point(460, 206);
-            label11.Name = "label11";
-            label11.Size = new Size(13, 14);
-            label11.TabIndex = 50;
-            label11.Text = "*";
-            // 
             // label9
             // 
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label9.AutoSize = true;
+            label9.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             label9.ForeColor = Color.Red;
-            label9.Location = new Point(431, 177);
+            label9.Location = new Point(434, 177);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(13, 14);
             label9.TabIndex = 49;
@@ -154,8 +141,10 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
+            label2.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(417, 65);
+            label2.Location = new Point(420, 65);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(13, 14);
             label2.TabIndex = 47;
@@ -165,8 +154,10 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
+            label1.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             label1.ForeColor = Color.Red;
-            label1.Location = new Point(492, 37);
+            label1.Location = new Point(494, 37);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(13, 14);
             label1.TabIndex = 46;
@@ -176,8 +167,9 @@
             // 
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(438, 65);
+            label8.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label8.Location = new Point(442, 65);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(93, 14);
             label8.TabIndex = 45;
@@ -186,9 +178,11 @@
             // txtFullName
             // 
             txtFullName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtFullName.Location = new Point(201, 62);
+            txtFullName.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtFullName.Location = new Point(202, 62);
+            txtFullName.Margin = new Padding(2, 3, 2, 3);
             txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(210, 22);
+            txtFullName.Size = new Size(213, 22);
             txtFullName.TabIndex = 2;
             txtFullName.Validating += txtFullName_Validating;
             // 
@@ -197,9 +191,10 @@
             btnExit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnExit.BackColor = Color.DimGray;
             btnExit.FlatAppearance.BorderSize = 0;
-            btnExit.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExit.Font = new Font("Calibri", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             btnExit.ForeColor = SystemColors.ButtonFace;
             btnExit.Location = new Point(397, 232);
+            btnExit.Margin = new Padding(2, 3, 2, 3);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(134, 39);
             btnExit.TabIndex = 43;
@@ -207,47 +202,15 @@
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
-            // label17
-            // 
-            label17.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label17.AutoSize = true;
-            label17.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(479, 203);
-            label17.Name = "label17";
-            label17.Size = new Size(52, 14);
-            label17.TabIndex = 39;
-            label17.Text = "محل ذخیره";
-            // 
-            // btnSaveCSRAddress
-            // 
-            btnSaveCSRAddress.AutoSize = true;
-            btnSaveCSRAddress.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSaveCSRAddress.Location = new Point(27, 202);
-            btnSaveCSRAddress.Name = "btnSaveCSRAddress";
-            btnSaveCSRAddress.Size = new Size(41, 24);
-            btnSaveCSRAddress.TabIndex = 8;
-            btnSaveCSRAddress.Text = "...";
-            btnSaveCSRAddress.UseVisualStyleBackColor = true;
-            btnSaveCSRAddress.Click += btnSaveCSRAddress_Click;
-            // 
-            // SaveCSRAddressTxt
-            // 
-            SaveCSRAddressTxt.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            SaveCSRAddressTxt.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            SaveCSRAddressTxt.Location = new Point(66, 203);
-            SaveCSRAddressTxt.Name = "SaveCSRAddressTxt";
-            SaveCSRAddressTxt.ReadOnly = true;
-            SaveCSRAddressTxt.Size = new Size(346, 22);
-            SaveCSRAddressTxt.TabIndex = 37;
-            // 
             // BtnSave
             // 
             BtnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnSave.BackColor = Color.ForestGreen;
             BtnSave.FlatAppearance.BorderSize = 0;
-            BtnSave.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnSave.Font = new Font("Calibri", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             BtnSave.ForeColor = SystemColors.ButtonFace;
-            BtnSave.Location = new Point(27, 232);
+            BtnSave.Location = new Point(26, 232);
+            BtnSave.Margin = new Padding(2, 3, 2, 3);
             BtnSave.Name = "BtnSave";
             BtnSave.Size = new Size(362, 39);
             BtnSave.TabIndex = 9;
@@ -259,8 +222,9 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(449, 149);
+            label6.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label6.Location = new Point(452, 149);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
             label6.Size = new Size(82, 14);
             label6.TabIndex = 26;
@@ -269,18 +233,21 @@
             // cmbType
             // 
             cmbType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cmbType.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
             cmbType.FormattingEnabled = true;
-            cmbType.Location = new Point(201, 34);
+            cmbType.Location = new Point(202, 34);
+            cmbType.Margin = new Padding(2, 3, 2, 3);
             cmbType.Name = "cmbType";
-            cmbType.Size = new Size(210, 22);
+            cmbType.Size = new Size(213, 22);
             cmbType.TabIndex = 1;
             // 
             // label10
             // 
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label10.AutoSize = true;
-            label10.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(448, 177);
+            label10.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label10.Location = new Point(451, 177);
+            label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(83, 14);
             label10.TabIndex = 20;
@@ -289,9 +256,11 @@
             // txtNationalCode
             // 
             txtNationalCode.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtNationalCode.Location = new Point(201, 174);
+            txtNationalCode.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNationalCode.Location = new Point(202, 174);
+            txtNationalCode.Margin = new Padding(2, 3, 2, 3);
             txtNationalCode.Name = "txtNationalCode";
-            txtNationalCode.Size = new Size(210, 22);
+            txtNationalCode.Size = new Size(213, 22);
             txtNationalCode.TabIndex = 6;
             txtNationalCode.Validating += txtNationalCode_Validating;
             // 
@@ -299,8 +268,9 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(449, 121);
+            label5.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label5.Location = new Point(452, 121);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(82, 14);
             label5.TabIndex = 13;
@@ -310,8 +280,9 @@
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(444, 93);
+            label4.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label4.Location = new Point(446, 93);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(87, 14);
             label4.TabIndex = 12;
@@ -321,8 +292,9 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(511, 37);
+            label3.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label3.Location = new Point(514, 37);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(20, 14);
             label3.TabIndex = 11;
@@ -331,25 +303,31 @@
             // txtOrganizationPart2
             // 
             txtOrganizationPart2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtOrganizationPart2.Location = new Point(201, 146);
+            txtOrganizationPart2.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtOrganizationPart2.Location = new Point(202, 146);
+            txtOrganizationPart2.Margin = new Padding(2, 3, 2, 3);
             txtOrganizationPart2.Name = "txtOrganizationPart2";
-            txtOrganizationPart2.Size = new Size(210, 22);
+            txtOrganizationPart2.Size = new Size(213, 22);
             txtOrganizationPart2.TabIndex = 5;
             // 
             // txtOrganizationPart1
             // 
             txtOrganizationPart1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtOrganizationPart1.Location = new Point(201, 118);
+            txtOrganizationPart1.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtOrganizationPart1.Location = new Point(202, 118);
+            txtOrganizationPart1.Margin = new Padding(2, 3, 2, 3);
             txtOrganizationPart1.Name = "txtOrganizationPart1";
-            txtOrganizationPart1.Size = new Size(210, 22);
+            txtOrganizationPart1.Size = new Size(213, 22);
             txtOrganizationPart1.TabIndex = 4;
             // 
             // txtOrganizationName
             // 
             txtOrganizationName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtOrganizationName.Location = new Point(201, 90);
+            txtOrganizationName.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtOrganizationName.Location = new Point(202, 90);
+            txtOrganizationName.Margin = new Padding(2, 3, 2, 3);
             txtOrganizationName.Name = "txtOrganizationName";
-            txtOrganizationName.Size = new Size(210, 22);
+            txtOrganizationName.Size = new Size(213, 22);
             txtOrganizationName.TabIndex = 3;
             // 
             // errorProvider
@@ -363,8 +341,9 @@
             panel1.Controls.Add(groupBox1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 3, 2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(556, 286);
+            panel1.Size = new Size(559, 286);
             panel1.TabIndex = 2;
             // 
             // MainForm
@@ -372,12 +351,13 @@
             AutoScaleDimensions = new SizeF(6F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(556, 286);
+            ClientSize = new Size(559, 286);
             Controls.Add(panel1);
             Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2, 3, 2, 3);
             MaximumSize = new Size(1500, 1500);
-            MinimumSize = new Size(550, 325);
+            MinimumSize = new Size(575, 325);
             Name = "MainForm";
             RightToLeft = RightToLeft.Yes;
             Text = "تولید CSR-سپیدار";
@@ -394,9 +374,6 @@
         #endregion
         private GroupBox groupBox1;
         private Button btnExit;
-        private Label label17;
-        private Button btnSaveCSRAddress;
-        private TextBox SaveCSRAddressTxt;
         private Button BtnSave;
         private Label label6;
         private ComboBox cmbType;
@@ -411,7 +388,6 @@
         private Label label8;
         private TextBox txtFullName;
         private ErrorProvider errorProvider;
-        private Label label11;
         private Label label9;
         private Label label2;
         private Label label1;
