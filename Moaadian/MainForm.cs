@@ -47,6 +47,15 @@ namespace Moaadian
             var distinguishedName = new List<(string, string)>();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
+                string csrAddress = folderBrowserDialog1.SelectedPath + $"\\{txtFullName.Text}-CSR.csr";
+                string privateAddress = folderBrowserDialog1.SelectedPath + $"\\{txtFullName.Text}-PrivateKey.key";
+                string publicAddress = folderBrowserDialog1.SelectedPath + $"\\{txtFullName.Text}-PublicKey.txt";
+
+                if (File.Exists(csrAddress) || File.Exists(privateAddress) || File.Exists(publicAddress))
+                {
+                    if (MessageBox.Show("فایل هایی با نام یکسان از قبل موجود هستند ، آیا می خواهید محتوای فایل ها بازنویسی شوند ؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+                }
+
                 if (!string.IsNullOrEmpty(txtFullName.Text)) distinguishedName.Add(("CN", txtFullName.Text + " [Stamp]"));
                 if (!string.IsNullOrEmpty(txtNationalCode.Text)) distinguishedName.Add(("SERIALNUMBER", txtNationalCode.Text));
                 if (cmbType.SelectedItem != null) distinguishedName.Add(("O", ((PersonType)cmbType.SelectedItem).Value));
@@ -74,9 +83,9 @@ namespace Moaadian
                     string publicKeyPem = new string(PemEncoding.Write("PUBLIC KEY", publicKeyBytes));
                     string privateKeyPem = new string(PemEncoding.Write("PRIVATE KEY", privateKeyBytes));
 
-                    File.WriteAllText(folderBrowserDialog1.SelectedPath + "\\MyCsr.csr", csr);
-                    File.WriteAllText(folderBrowserDialog1.SelectedPath + "\\MyPrivateKey.key", privateKeyPem);
-                    File.WriteAllText(folderBrowserDialog1.SelectedPath + "\\MyPublicKey.txt", publicKeyPem);
+                    File.WriteAllText(csrAddress, csr);
+                    File.WriteAllText(privateAddress, privateKeyPem);
+                    File.WriteAllText(publicAddress, publicKeyPem);
                     MessageBox.Show("گواهی و کلید شما صادر شد", "عملیات موفق", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 catch
@@ -131,6 +140,12 @@ namespace Moaadian
         {
             System.Windows.Forms.ToolTip tt = new System.Windows.Forms.ToolTip();
             tt.SetToolTip(this.pictureBox1, "سپیدار سیستم آسیا");
+        }
+
+        private void llblHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://landing.sepidarsystem.com/taxpayer-system/") { UseShellExecute = true };
+            Process.Start(sInfo);
         }
     }
 }

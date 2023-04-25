@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             groupBox1 = new GroupBox();
+            llblHelp = new LinkLabel();
             label12 = new Label();
             pictureBox1 = new PictureBox();
             label9 = new Label();
@@ -64,6 +65,7 @@
             groupBox1.AutoSize = true;
             groupBox1.BackColor = Color.FromArgb(192, 255, 192);
             groupBox1.BackgroundImageLayout = ImageLayout.None;
+            groupBox1.Controls.Add(llblHelp);
             groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(label9);
@@ -94,26 +96,36 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "مشخصات سازمان/شرکت";
             // 
+            // llblHelp
+            // 
+            llblHelp.AutoSize = true;
+            llblHelp.Location = new Point(62, 199);
+            llblHelp.Name = "llblHelp";
+            llblHelp.Size = new Size(82, 14);
+            llblHelp.TabIndex = 53;
+            llblHelp.TabStop = true;
+            llblHelp.Text = "راهنمای تولید CSR";
+            llblHelp.LinkClicked += llblHelp_LinkClicked;
+            // 
             // label12
             // 
             label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label12.AutoSize = true;
-            label12.Font = new Font("Calibri", 10F, FontStyle.Regular, GraphicsUnit.Pixel);
-            label12.ForeColor = SystemColors.ActiveBorder;
-            label12.Location = new Point(6, 270);
+            label12.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label12.ForeColor = SystemColors.ControlDarkDark;
+            label12.Location = new Point(4, 269);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(18, 13);
+            label12.Size = new Size(20, 14);
             label12.TabIndex = 52;
             label12.Text = "V1";
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.FromArgb(192, 255, 192);
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(26, 34);
             pictureBox1.Margin = new Padding(2, 3, 2, 3);
             pictureBox1.Name = "pictureBox1";
@@ -193,10 +205,10 @@
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.Font = new Font("Calibri", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             btnExit.ForeColor = SystemColors.ButtonFace;
-            btnExit.Location = new Point(397, 232);
+            btnExit.Location = new Point(26, 222);
             btnExit.Margin = new Padding(2, 3, 2, 3);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(134, 39);
+            btnExit.Size = new Size(172, 39);
             btnExit.TabIndex = 43;
             btnExit.Text = "خروج";
             btnExit.UseVisualStyleBackColor = false;
@@ -209,10 +221,10 @@
             BtnSave.FlatAppearance.BorderSize = 0;
             BtnSave.Font = new Font("Calibri", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             BtnSave.ForeColor = SystemColors.ButtonFace;
-            BtnSave.Location = new Point(26, 232);
+            BtnSave.Location = new Point(202, 222);
             BtnSave.Margin = new Padding(2, 3, 2, 3);
             BtnSave.Name = "BtnSave";
-            BtnSave.Size = new Size(362, 39);
+            BtnSave.Size = new Size(333, 39);
             BtnSave.TabIndex = 9;
             BtnSave.Text = "ایجاد و ذخیره";
             BtnSave.UseVisualStyleBackColor = false;
@@ -395,5 +407,6 @@
         private Label label12;
         private Panel panel1;
         private FolderBrowserDialog folderBrowserDialog1;
+        private LinkLabel llblHelp;
     }
 }
