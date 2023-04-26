@@ -54,6 +54,7 @@
             errorProvider = new ErrorProvider(components);
             panel1 = new Panel();
             folderBrowserDialog1 = new FolderBrowserDialog();
+            label7 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
@@ -65,6 +66,7 @@
             groupBox1.AutoSize = true;
             groupBox1.BackColor = Color.FromArgb(192, 255, 192);
             groupBox1.BackgroundImageLayout = ImageLayout.None;
+            groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(llblHelp);
             groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(pictureBox1);
@@ -341,6 +343,7 @@
             txtOrganizationName.Name = "txtOrganizationName";
             txtOrganizationName.Size = new Size(213, 22);
             txtOrganizationName.TabIndex = 3;
+            txtOrganizationName.Validating += txtOrganizationName_Validating;
             // 
             // errorProvider
             // 
@@ -357,6 +360,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(559, 286);
             panel1.TabIndex = 2;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(429, 93);
+            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(13, 14);
+            label7.TabIndex = 54;
+            label7.Text = "*";
             // 
             // MainForm
             // 
@@ -408,5 +424,6 @@
         private Panel panel1;
         private FolderBrowserDialog folderBrowserDialog1;
         private LinkLabel llblHelp;
+        private Label label7;
     }
 }

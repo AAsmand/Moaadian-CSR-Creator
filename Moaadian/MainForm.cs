@@ -34,7 +34,7 @@ namespace Moaadian
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtFullName.Text) || string.IsNullOrEmpty(txtNationalCode.Text) || cmbType.SelectedItem == null)
+            if (string.IsNullOrEmpty(txtFullName.Text) || string.IsNullOrEmpty(txtNationalCode.Text) || string.IsNullOrEmpty(txtOrganizationName.Text) || cmbType.SelectedItem == null)
             {
                 MessageBox.Show("لطفا مقادیر اجباری را به درستی وارد نمائید", "عملیات ناموفق", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -146,6 +146,13 @@ namespace Moaadian
         {
             ProcessStartInfo sInfo = new ProcessStartInfo("https://landing.sepidarsystem.com/taxpayer-system/") { UseShellExecute = true };
             Process.Start(sInfo);
+        }
+        private void txtOrganizationName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtOrganizationName.Text))
+                errorProvider.SetError(txtOrganizationName, "وارد کردن فیلد نام سازمان به فارسی، الزامی است");
+            else
+                errorProvider.SetError(txtOrganizationName, "");
         }
     }
 }
